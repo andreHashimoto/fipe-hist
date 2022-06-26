@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labels = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+        ];
+
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'My First dataset',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        };
+
+        const config = {
+            type: 'line',
+            data: data,
+            options: {}
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+        <label for="marca">Marca:</label>
+        <select name="marca" id="marca" onchange="mudouMarca()">
+        </select>
+
+        <label for="marca">Modelo:</label>
+        <select name="modelo" id="modelo" onchange="mudouModelo()">
+        </select>
+
+        <label for="marca">Ano:</label>
+        <select name="ano" id="ano" onchange="mudouAno()">
+        </select>
+
+        <label for="qtdMeses">Período:</label>
+        <select name="qtdMeses" id="qtdMeses" onchange="mudouMeses()">
+            <option value="0">Quantidade de meses</option>
+            <option value="2">Últimos 2 meses</option>
+            <option value="4">Últimos 4 meses</option>
+            <option value="6">Últimos 6 meses</option>
+            <option value="8">Últimos 8 meses</option>
+            <option value="10">Últimos 10 meses</option>
+            <option value="12">Últimos 12 meses</option>
+            <option value="24">Últimos 24 meses</option>
+            <option value="36">Últimos 36 meses</option>
+        </select>
+
+        <button onclick="consultar()">Consultar</button>
+    </div>
+    <div style="width: 90%;">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        // const myChart = new Chart(
+        //     document.getElementById('myChart'),
+        //     config
+        // );
+    </script>
+    <script src="./scripts/fipe.js"></script>
+
+</body>
+
+</html>
